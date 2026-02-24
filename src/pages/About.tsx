@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Users, Target, Zap, Rocket } from "lucide-react";
+import { Users, Target, Zap, Rocket, Instagram } from "lucide-react";
 import satvikImg from "../assets/Satvik.png";
 import heetImg from '../assets/Heet.jpeg'
 import utsavImg from "../assets/Utsav.jpeg"
@@ -52,9 +52,9 @@ export function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross-domain integration to ensure seamless hardware–software alignment.", image : satvikImg },
-              { name: "Heet Sorathia", role: "Hardware & Mechanical Lead", desc: "Oversees product engineering, 3D design, and structural development, ensuring manufacturability and mechanical precision.", image : heetImg },
-              { name: "Utsav Raj", role: "Experience & Identity Lead", desc: "Directs product identity, user experience, and visual design, shaping LUMA’s emotional presence and interaction model.", image : utsavImg }
+              { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross-domain integration to ensure seamless hardware–software alignment.", image : satvikImg, instagram : "@heheshashi" },
+              { name: "Heet Sorathia", role: "Hardware & Mechanical Lead", desc: "Oversees product engineering, 3D design, and structural development, ensuring manufacturability and mechanical precision.", image : heetImg, instagram : "@heet_so_" },
+              { name: "Utsav Raj", role: "Experience & Identity Lead", desc: "Directs product identity, user experience, and visual design, shaping LUMA’s emotional presence and interaction model.", image : utsavImg, instagram : "@activolreta" }
             ].map((member, i) => (
               <motion.div 
                 key={i}
@@ -78,6 +78,15 @@ export function About() {
                 <h3 className="text-xl font-display font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-[#6BB5AC] font-medium text-sm mb-4">{member.role}</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{member.desc}</p>
+                <a 
+                  href={`https://instagram.com/${member.instagram.replace('@', '')}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-400 hover:text-pink-500 transition-colors mt-auto"
+                >
+                  <Instagram size={18} />
+                  <span className="text-sm font-medium">{member.instagram}</span>
+                </a>
               </motion.div>
             ))}
           </div>
