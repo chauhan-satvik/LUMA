@@ -1,5 +1,6 @@
-import { motion } from "motion/react";
+import { motion, useMotionValue, useTransform, useSpring } from "motion/react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { 
   Smile, 
   Hand, 
@@ -17,6 +18,26 @@ import {
 } from "lucide-react";
 
 export function Features() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  const smoothX = useSpring(mouseX, { stiffness: 1000, damping: 15 });
+  const smoothY = useSpring(mouseY, { stiffness: 1000, damping: 15 });
+
+  const eyeX = useTransform(smoothX, [-1, 1], [-15, 15]);
+  const eyeY = useTransform(smoothY, [-1, 1], [-10, 10]);
+
   // Grouping features into a narrative structure makes it easier to understand
   const featureCategories = [
     {
@@ -150,18 +171,18 @@ export function Features() {
               <div className="w-32 h-24 bg-black rounded-2xl shadow-inner relative overflow-hidden flex items-center justify-center">
                 <motion.div 
                   className="flex gap-5"
-                  animate={{ 
-                    y: [0, -2, 0, 2, 0],
-                    scaleY: [1, 0.95, 1, 1.05, 1]
-                  }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 4,
-                    ease: "easeInOut"
-                  }}
+                  style={{ x: eyeX, y: eyeY }}
                 >
-                  <div className="w-5 h-8 bg-[#A3D9D3] rounded-full blur-[1px] shadow-[0_0_10px_rgba(163,217,211,0.8)]" />
-                  <div className="w-5 h-8 bg-[#A3D9D3] rounded-full blur-[1px] shadow-[0_0_10px_rgba(163,217,211,0.8)]" />
+                  <motion.div 
+                    animate={{ scaleY: [1, 0.95, 1, 1.05, 1] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                    className="w-5 h-8 bg-[#A3D9D3] rounded-full blur-[0.5px] shadow-[0_0_10px_rgba(163,217,211,0.6)]" 
+                  />
+                  <motion.div 
+                    animate={{ scaleY: [1, 0.95, 1, 1.05, 1] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                    className="w-5 h-8 bg-[#A3D9D3] rounded-full blur-[0.5px] shadow-[0_0_10px_rgba(163,217,211,0.6)]" 
+                  />
                 </motion.div>
               </div>
             </div>
