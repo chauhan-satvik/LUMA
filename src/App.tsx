@@ -4,10 +4,12 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Progress } from "./pages/Progress";
 import { Features } from "./pages/Features"
+import CustomCursor from "./components/CustomCursor";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <CustomCursor />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
