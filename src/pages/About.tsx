@@ -52,7 +52,7 @@ export function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross domain integration to ensure seamless hardware–software alignment.", image : satvikImg, instagram : "@heheshashi" },
+              { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross domain integration to ensure seamless hardware-software alignment.", image : satvikImg, instagram : "@heheshashi" },
               { name: "Heet Sorathia", role: "Hardware & Mechanical Lead", desc: "Oversees product engineering, 3D design, and structural development, ensuring manufacturability and mechanical precision.", image : heetImg, instagram : "@heet_so_" },
               { name: "Utsav Raj", role: "Experience & Identity Lead", desc: "Directs product identity, user experience, and visual design, shaping LUMA’s emotional presence and interaction model.", image : utsavImg, instagram : "@activolreta" }
             ].map((member, i) => (
@@ -111,7 +111,7 @@ export function About() {
             ].map((approach, i) => (
               <div key={i} className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-display font-semibold text-gray-900 mb-2">{approach.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{approach.desc}</p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">{approach.desc}</p>
               </div>
             ))}
           </div>
