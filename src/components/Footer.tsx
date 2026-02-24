@@ -21,13 +21,13 @@ export function Footer() {
           <a href="#" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Twitter size={20} />
           </a>
-          <a href="#" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
+          <a href="https://www.instagram.com/luma.module/" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Instagram size={20} />
           </a>
           <a href="#" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Github size={20} />
           </a>
-          <a href="mailto:hello@lumacompanion.com" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
+          <a href="mailto:lumamodule@gmail.com" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Mail size={20} />
           </a>
         </div>
