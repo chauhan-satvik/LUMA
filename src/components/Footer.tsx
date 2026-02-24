@@ -18,16 +18,16 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Twitter size={20} />
           </a>
-          <a href="https://www.instagram.com/luma.module/" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
+          <a href="https://www.instagram.com/luma.module/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Instagram size={20} />
           </a>
-          <a href="#" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Github size={20} />
           </a>
-          <a href="mailto:lumamodule@gmail.com" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
+          <a href="mailto:lumamodule@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#A3D9D3] transition-colors">
             <Mail size={20} />
           </a>
         </div>
