@@ -79,7 +79,7 @@ export function Navbar() {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
+      </div>
       {/* Mobile Nav */}
       {isOpen && (
         <motion.div 
