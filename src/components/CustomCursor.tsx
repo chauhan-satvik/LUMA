@@ -18,18 +18,22 @@ export default function CustomCursor() {
   const isHovering = useMotionValue(0);
   
   useEffect(() => {
-    const handleMouseOver = (e: MouseEvent) => {
-        const target = e.target as HTMLElement;
+    const handleMove = (e: MouseEvent) => {
+        const element = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement;
 
-        if (target.closest("a, button, [data-cursor='hover']")) {
+        if (!element) return;
+
+        if (
+        element.closest("a, button, input, textarea, select, [data-cursor='hover']")
+        ) {
         isHovering.set(1);
         } else {
         isHovering.set(0);
         }
     };
 
-    window.addEventListener("mouseover", handleMouseOver);
-    return () => window.removeEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
     }, [isHovering]);
 
   // Smooth follow
@@ -49,7 +53,7 @@ export default function CustomCursor() {
     );
   // Scale based on speed
   const scale = useTransform(speed, [0, 1500], [1, 1.6]);
-  const hoverScale = useTransform(isHovering, [0, 1], [1, 2]);
+  const hoverScale = useTransform(isHovering, [0, 1], [1, 1.5]);
 
   const finalScale = useTransform(
     [scale, hoverScale],
