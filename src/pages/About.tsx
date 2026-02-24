@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 import { Users, Target, Zap, Rocket } from "lucide-react";
-
+import satvikImg from "../assets/Satvik.png";
+import heetImg from '../assets/Heet.jpeg'
+// import utsavImg from "../assets/"
+import { image } from "framer-motion/client";
 export function About() {
   return (
     <div className="flex flex-col min-h-screen pt-12 pb-24 px-6">
@@ -49,9 +52,9 @@ export function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Alex Chen", role: "Hardware Lead", desc: "Former robotics engineer obsessed with tactile feedback and micro-actuators." },
-              { name: "Sarah Jenkins", role: "Design Director", desc: "Industrial designer focused on soft forms and emotional ergonomics." },
-              { name: "Marcus Thorne", role: "Software Architect", desc: "AI researcher building the procedural animation engine that brings LUMA to life." }
+              { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross-domain integration to ensure seamless hardware–software alignment.", image : satvikImg },
+              { name: "Heet Sorathia", role: "Hardware & Mechanical Lead", desc: "Oversees product engineering, 3D design, and structural development, ensuring manufacturability and mechanical precision.", image : heetImg },
+              { name: "Utsav Raj", role: "Experience & Identity Lead", desc: "Directs product identity, user experience, and visual design, shaping LUMA’s emotional presence and interaction model.", image : heetImg }
             ].map((member, i) => (
               <motion.div 
                 key={i}
@@ -62,10 +65,15 @@ export function About() {
                 transition={{ delay: i * 0.1 }}
               >
                 <div className="w-32 h-32 rounded-full bg-gray-100 border-4 border-white shadow-md mb-6 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 group-hover:scale-105 transition-transform duration-500" />
+                  <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 group-hover:scale-105 transition-transform duration-500" /> */}
                   {/* Placeholder avatar graphic */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-24 bg-gray-400 rounded-t-full opacity-50" />
-                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gray-400 rounded-full opacity-50" />
+                  {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-24 bg-gray-400 rounded-t-full opacity-50" />
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gray-400 rounded-full opacity-50" /> */}
                 </div>
                 <h3 className="text-xl font-display font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-[#6BB5AC] font-medium text-sm mb-4">{member.role}</p>
