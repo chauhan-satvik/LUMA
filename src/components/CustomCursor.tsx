@@ -53,7 +53,7 @@ export default function CustomCursor() {
     );
   // Scale based on speed
   const scale = useTransform(speed, [0, 1500], [1, 1.6]);
-  const hoverScale = useTransform(isHovering, [0, 1], [1, 1.5]);
+  const hoverScale = useTransform(isHovering, [0, 1], [1, 1.2]);
 
   const finalScale = useTransform(
     [scale, hoverScale],
