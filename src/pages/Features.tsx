@@ -10,145 +10,129 @@ import {
   MessageSquare, 
   Layers, 
   Settings,
-  ArrowRight
+  ArrowRight,
+  Heart,
+  Zap,
+  Sparkles
 } from "lucide-react";
 
 export function Features() {
-  const sections = [
+  // Grouping features into a narrative structure makes it easier to understand
+  const featureCategories = [
     {
-      id: "emotion",
-      title: "Emotion in Motion",
-      subtitle: "Emotional Expression Engine",
-      icon: Smile,
-      description: "LUMA features a dynamic animation engine capable of displaying a wide range of expressive states — joy, curiosity, shyness, excitement, tiredness, and more — designed to feel fluid and lifelike.",
-      points: [
-        "High frame-rate animation system",
-        "Context-aware emotional states",
-        "Idle behaviors and micro-expressions",
-        "Mood shifts based on interaction"
-      ],
-      color: "bg-rose-50 text-rose-600 border-rose-100"
+      id: "feel",
+      categoryTitle: "Feel",
+      categorySubtitle: "The Emotional Core",
+      categoryIcon: Heart,
+      categoryColor: "text-rose-500",
+      categoryBg: "bg-rose-50",
+      description: "LUMA isn't just a screen. It's designed to express, react, and share your space with genuine presence.",
+      features: [
+        {
+          title: "Emotion in Motion",
+          subtitle: "Emotional Expression Engine",
+          icon: Smile,
+          desc: "A dynamic animation engine capable of displaying a wide range of expressive states — joy, curiosity, shyness, excitement, and tiredness.",
+          tags: ["60fps Animations", "Context-Aware", "Micro-expressions", "Mood Shifts"],
+          color: "bg-rose-100 text-rose-600 border-rose-200"
+        },
+        {
+          title: "Interactive by Design",
+          subtitle: "Touch Interaction",
+          icon: Hand,
+          desc: "LUMA responds to touch with subtle reactions and expressive feedback, creating a sense of physical presence.",
+          tags: ["Capacitive Touch", "Reactive Feedback", "Behavioral Variation"],
+          color: "bg-orange-100 text-orange-600 border-orange-200"
+        },
+        {
+          title: "Sound Meets Expression",
+          subtitle: "Audio & Ambient Modes",
+          icon: Music,
+          desc: "Integrates audio experiences with synchronized animations for a richer emotional presence.",
+          tags: ["Music Mode", "Dance Animations", "ASMR/Ambient", "Sound Reactions"],
+          color: "bg-amber-100 text-amber-600 border-amber-200"
+        }
+      ]
     },
     {
-      id: "touch",
-      title: "Interactive by Design",
-      subtitle: "Touch Interaction",
-      icon: Hand,
-      description: "LUMA responds to touch with subtle reactions and expressive feedback, creating a sense of physical presence.",
-      points: [
-        "Capacitive touch response",
-        "Reactive animations",
-        "Behavioral variation based on interaction frequency"
-      ],
-      color: "bg-blue-50 text-blue-600 border-blue-100"
+      id: "connect",
+      categoryTitle: "Connect",
+      categorySubtitle: "Smart & Seamless",
+      categoryIcon: Zap,
+      categoryColor: "text-blue-500",
+      categoryBg: "bg-blue-50",
+      description: "Essential utilities and intelligence, integrated so naturally they never break the illusion of life.",
+      features: [
+        {
+          title: "Connected, Yet Minimal",
+          subtitle: "Smart Utility Integration",
+          icon: Clock,
+          desc: "Integrates essential smart utilities without overwhelming the experience.",
+          tags: ["Time & Weather", "Alarms & Timers", "Calendar Sync", "Battery Moods"],
+          color: "bg-emerald-100 text-emerald-600 border-emerald-200"
+        },
+        {
+          title: "Intelligence That Grows",
+          subtitle: "AI & Knowledge Layer",
+          icon: BrainCircuit,
+          desc: "Designed to evolve with advanced intelligence capabilities, keeping interactions visionary but grounded.",
+          tags: ["Dictionary Queries", "Conversational AI", "Context-Aware", "Cloud Framework"],
+          color: "bg-blue-100 text-blue-600 border-blue-200"
+        },
+        {
+          title: "Stay Connected",
+          subtitle: "Communication Integration",
+          icon: MessageSquare,
+          desc: "Integrates with your phone to extend communication interaction into your physical space.",
+          tags: ["Bluetooth Calls", "Speaking Animations", "Subtle Notifications"],
+          color: "bg-indigo-100 text-indigo-600 border-indigo-200"
+        }
+      ]
     },
     {
-      id: "utility",
-      title: "Connected, Yet Minimal",
-      subtitle: "Smart Utility Integration",
-      icon: Clock,
-      description: "LUMA integrates essential smart utilities without overwhelming the experience.",
-      points: [
-        "Time and weather display",
-        "Alarm and timer",
-        "Calendar reminders",
-        "Birthday animations",
-        "Mood-based battery indicator"
-      ],
-      color: "bg-emerald-50 text-emerald-600 border-emerald-100"
-    },
-    {
-      id: "personalization",
-      title: "Made to Reflect You",
-      subtitle: "Personalization System",
-      icon: Palette,
-      description: "LUMA adapts to your style and preferences through app-based customization.",
-      points: [
-        "Theme and color customization",
-        "Font adjustments",
-        "Name and date memory",
-        "Special occasion animations"
-      ],
-      color: "bg-purple-50 text-purple-600 border-purple-100"
-    },
-    {
-      id: "audio",
-      title: "Sound Meets Expression",
-      subtitle: "Audio & Ambient Modes",
-      icon: Music,
-      description: "LUMA can integrate audio experiences with synchronized animations for a richer emotional presence.",
-      points: [
-        "Music playback mode",
-        "Dance animations",
-        "Ambient/ASMR mode",
-        "Expressive reactions during sound playback"
-      ],
-      color: "bg-amber-50 text-amber-600 border-amber-100"
-    },
-    {
-      id: "ai",
-      title: "Intelligence That Grows",
-      subtitle: "AI & Knowledge Layer",
-      icon: BrainCircuit,
-      description: "LUMA is designed to evolve with advanced intelligence capabilities.",
-      points: [
-        "Dictionary-style queries",
-        "Conversational AI potential",
-        "Context-aware responses",
-        "Cloud-connected intelligence framework"
-      ],
-      color: "bg-indigo-50 text-indigo-600 border-indigo-100"
-    },
-    {
-      id: "communication",
-      title: "Stay Connected",
-      subtitle: "Communication Integration",
-      icon: MessageSquare,
-      description: "LUMA can integrate with your phone to extend communication interaction.",
-      points: [
-        "Bluetooth call support",
-        "Expressive speaking animations",
-        "Subtle notification presence"
-      ],
-      color: "bg-sky-50 text-sky-600 border-sky-100"
-    },
-    {
-      id: "modular",
-      title: "Designed to Evolve",
-      subtitle: "Modular Design Ecosystem",
-      icon: Layers,
-      description: "LUMA features a modular outer shell system, allowing physical customization without replacing core electronics.",
-      points: [
-        "Swappable 3D-printed shells",
-        "Limited edition designs",
-        "Standardized internal core",
-        "Upgrade-friendly architecture"
-      ],
-      color: "bg-orange-50 text-orange-600 border-orange-100"
-    },
-    {
-      id: "precision",
-      title: "Engineered with Intention",
-      subtitle: "Built with Precision",
-      icon: Settings,
-      description: "Compact form factor engineered for balance between visibility, portability, and performance.",
-      points: [
-        "Fist-sized body",
-        "Optimized internal architecture",
-        "Durable structure",
-        "Battery-efficient system"
-      ],
-      color: "bg-slate-50 text-slate-600 border-slate-200"
+      id: "evolve",
+      categoryTitle: "Evolve",
+      categorySubtitle: "Yours to Shape",
+      categoryIcon: Sparkles,
+      categoryColor: "text-purple-500",
+      categoryBg: "bg-purple-50",
+      description: "Hardware that lasts, software that adapts. LUMA is built to grow alongside you.",
+      features: [
+        {
+          title: "Made to Reflect You",
+          subtitle: "Personalization System",
+          icon: Palette,
+          desc: "Adapts to your style and preferences through deep app-based customization.",
+          tags: ["Theme & Colors", "Font Adjustments", "Memory", "Special Occasions"],
+          color: "bg-purple-100 text-purple-600 border-purple-200"
+        },
+        {
+          title: "Designed to Evolve",
+          subtitle: "Modular Design Ecosystem",
+          icon: Layers,
+          desc: "A modular outer shell system allows physical customization without replacing core electronics.",
+          tags: ["Swappable Shells", "Limited Editions", "Standard Core", "Upgrade-Friendly"],
+          color: "bg-fuchsia-100 text-fuchsia-600 border-fuchsia-200"
+        },
+        {
+          title: "Engineered with Intention",
+          subtitle: "Built with Precision",
+          icon: Settings,
+          desc: "Compact form factor engineered for balance between visibility, portability, and performance.",
+          tags: ["Fist-Sized", "Optimized Architecture", "Durable", "Battery-Efficient"],
+          color: "bg-slate-200 text-slate-700 border-slate-300"
+        }
+      ]
     }
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F0F2F5] relative">
+    <div className="flex flex-col min-h-screen bg-[#F0F2F5] relative selection:bg-[#A3D9D3] selection:text-gray-900">
       {/* Subtle technical grid overlay */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwgMCwgMCwgMC4wNSkiLz48L3N2Zz4=')] bg-[length:40px_40px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwgMCwgMCwgMC4wNCkiLz48L3N2Zz4=')] bg-[length:40px_40px] pointer-events-none fixed" />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
+      <section className="relative pt-32 pb-20 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[60vh]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#A3D9D3]/20 rounded-full blur-[100px] -z-10" />
         
         <div className="max-w-4xl mx-auto text-center z-10">
@@ -156,65 +140,51 @@ export function Features() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-12 relative inline-block"
+            className="mb-10 relative inline-block"
           >
-            {/* Luma Placeholder Render */}
-            <div className="w-56 h-56 md:w-72 md:h-72 bg-white rounded-[2.5rem] shadow-xl border border-gray-100 flex items-center justify-center relative overflow-hidden group">
+            {/* Minimal Luma Render */}
+            <div className="w-48 h-48 bg-white rounded-[2rem] shadow-xl border border-gray-100 flex items-center justify-center relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50" />
               
               {/* Face Screen */}
-              <div className="w-40 h-28 bg-black rounded-3xl shadow-inner relative overflow-hidden flex items-center justify-center">
+              <div className="w-32 h-24 bg-black rounded-2xl shadow-inner relative overflow-hidden flex items-center justify-center">
                 <motion.div 
-                  className="flex gap-6"
+                  className="flex gap-5"
                   animate={{ 
-                    y: [0, -3, 0, 3, 0],
+                    y: [0, -2, 0, 2, 0],
                     scaleY: [1, 0.95, 1, 1.05, 1]
                   }}
                   transition={{ 
                     repeat: Infinity, 
-                    duration: 5,
+                    duration: 4,
                     ease: "easeInOut"
                   }}
                 >
-                  <div className="w-6 h-10 bg-[#A3D9D3] rounded-full blur-[2px] shadow-[0_0_15px_rgba(163,217,211,0.8)]" />
-                  <div className="w-6 h-10 bg-[#A3D9D3] rounded-full blur-[2px] shadow-[0_0_15px_rgba(163,217,211,0.8)]" />
+                  <div className="w-5 h-8 bg-[#A3D9D3] rounded-full blur-[1px] shadow-[0_0_10px_rgba(163,217,211,0.8)]" />
+                  <div className="w-5 h-8 bg-[#A3D9D3] rounded-full blur-[1px] shadow-[0_0_10px_rgba(163,217,211,0.8)]" />
                 </motion.div>
               </div>
-
-              {/* Mechanical details */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-10 h-1 bg-gray-200 rounded-full" />
-              <div className="absolute top-4 right-4 w-1.5 h-1.5 bg-gray-300 rounded-full" />
             </div>
             
             {/* Floating animation */}
             <motion.div
-              className="absolute -inset-4 border border-[#A3D9D3]/30 rounded-[3rem] -z-10"
-              animate={{ 
-                y: [0, -8, 0],
-                rotate: [0, 1, -1, 0]
-              }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 7,
-                ease: "easeInOut"
-              }}
+              className="absolute -inset-3 border border-[#A3D9D3]/40 rounded-[2.5rem] -z-10"
+              animate={{ y: [0, -6, 0], rotate: [0, 1, -1, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             />
           </motion.div>
 
           <motion.h1 
-            className="text-5xl md:text-7xl font-display font-bold text-gray-900 tracking-tight mb-6"
+            className="text-4xl md:text-6xl font-display font-bold text-gray-900 tracking-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Designed to <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AC7C0] to-blue-400">
-              Feel Alive.
-            </span>
+            Designed to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AC7C0] to-blue-400">Feel Alive.</span>
           </motion.h1>
 
           <motion.p 
-            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -224,44 +194,81 @@ export function Features() {
         </div>
       </section>
 
-      {/* Features Grid */}
+      {/* Narrative Features Layout */}
       <section className="py-12 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sections.map((section, i) => (
-              <motion.div 
-                key={section.id}
-                className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group cursor-pointer flex flex-col h-full"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5, scale: 1.01 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border ${section.color} transition-colors duration-300`}>
-                  <section.icon size={28} strokeWidth={1.5} />
-                </div>
-                
-                <div className="mb-4">
-                  <div className="text-xs font-mono uppercase tracking-wider text-gray-400 mb-2">{section.subtitle}</div>
-                  <h3 className="font-display font-bold text-gray-900 text-2xl group-hover:text-[#6BB5AC] transition-colors">{section.title}</h3>
-                </div>
-                
-                <p className="text-gray-600 leading-relaxed mb-8 flex-grow">
-                  {section.description}
-                </p>
-                
-                <ul className="space-y-3 mt-auto pt-6 border-t border-gray-100">
-                  {section.points.map((point, j) => (
-                    <li key={j} className="flex items-start gap-3 text-sm text-gray-700">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#A3D9D3] flex-shrink-0" />
-                      <span className="leading-snug">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+        <div className="max-w-6xl mx-auto space-y-32">
+          {featureCategories.map((category, index) => (
+            <div key={category.id} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+              
+              {/* Sticky Category Header */}
+              <div className="lg:col-span-4 relative">
+                <motion.div 
+                  className="lg:sticky lg:top-32"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <div className={`w-16 h-16 rounded-2xl ${category.categoryBg} ${category.categoryColor} flex items-center justify-center mb-6 shadow-sm border border-white`}>
+                    <category.categoryIcon size={32} strokeWidth={1.5} />
+                  </div>
+                  <h2 className="text-sm font-mono uppercase tracking-widest text-gray-400 mb-2">
+                    {category.categorySubtitle}
+                  </h2>
+                  <h3 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                    {category.categoryTitle}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    {category.description}
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Feature Cards List */}
+              <div className="lg:col-span-8 space-y-6">
+                {category.features.map((feature, fIndex) => (
+                  <motion.div 
+                    key={fIndex}
+                    className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: fIndex * 0.1 }}
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start gap-6">
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border ${feature.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
+                        <feature.icon size={28} strokeWidth={1.5} />
+                      </div>
+                      
+                      <div className="flex-grow">
+                        <div className="text-xs font-mono uppercase tracking-wider text-gray-400 mb-1">
+                          {feature.subtitle}
+                        </div>
+                        <h4 className="font-display font-bold text-gray-900 text-2xl mb-3">
+                          {feature.title}
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed mb-6">
+                          {feature.desc}
+                        </p>
+                        
+                        {/* Tags instead of bullet points for a cleaner look */}
+                        <div className="flex flex-wrap gap-2">
+                          {feature.tags.map((tag, tIndex) => (
+                            <span 
+                              key={tIndex} 
+                              className="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-sm text-gray-600 font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+            </div>
+          ))}
         </div>
       </section>
 
