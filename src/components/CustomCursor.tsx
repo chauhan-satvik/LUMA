@@ -40,6 +40,8 @@ export default function CustomCursor() {
       style={{
         x: smoothX,
         y: smoothY,
+        translateX: "-50%",
+        translateY: "-50%",
         scale,
         scaleX: stretchX,
         scaleY: stretchY
