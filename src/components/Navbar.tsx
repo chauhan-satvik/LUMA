@@ -32,46 +32,53 @@ export function Navbar() {
         </Link>
 
         {/* Always Visible Last Update */}
-        <span className="text-[10px] sm:text-xs text-gray-400 absolute left-1/2 -translate-x-1/2">
+        {/* <span className="text-[10px] sm:text-xs text-gray-400 absolute left-1/2 -translate-x-1/2">
           Last Update : {lastUpdate}
-        </span>
+        </span> */}
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={cn(
-                "text-sm font-medium transition-colors relative py-2",
-                location.pathname === link.path
-                  ? "text-gray-900"
-                  : "text-gray-500 hover:text-gray-900"
-              )}
-            >
-              {link.name}
-              {location.pathname === link.path && (
-                <motion.div
-                  layoutId="nav-indicator"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#A3D9D3] rounded-full"
-                />
-              )}
-            </Link>
-          ))}
+        {/* Desktop Right Section */}
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-8">
+            {links.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={cn(
+                  "text-sm font-medium transition-colors relative py-2",
+                  location.pathname === link.path
+                    ? "text-gray-900"
+                    : "text-gray-500 hover:text-gray-900"
+                )}
+              >
+                {link.name}
+                {location.pathname === link.path && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#A3D9D3] rounded-full"
+                  />
+                )}
+              </Link>
+            ))}
+          </nav>
 
-          {/* <span className="text-xs text-gray-400 ml-4 border-l pl-4">
+          <span className="text-xs text-gray-400 border-l pl-4">
             Last Update : {lastUpdate}
-          </span> */}
-        </nav>
+          </span>
+        </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden p-2 text-gray-600"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+        {/* Mobile Right Section */}
+        <div className="md:hidden flex items-center gap-3">
+          <span className="text-[11px] text-gray-400 whitespace-nowrap">
+            Last Update : {lastUpdate}
+          </span>
+
+          <button 
+            className="p-2 text-gray-600"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
       {/* Mobile Nav */}
       {isOpen && (
