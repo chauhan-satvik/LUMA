@@ -3,10 +3,10 @@ import { CheckCircle2, CircleDashed, Circle, Clock, ArrowRight, Activity } from 
 
 export function Progress() {
   const timeline = [
-    { title: "Concept Defined", status: "completed", progress: 100, desc: "Initial sketches, emotional goals, and core feature set locked." },
-    { title: "Architecture Designed", status: "completed", progress: 100, desc: "System architecture, component selection, and PCB layout." },
-    { title: "Hardware Prototyping", status: "in-progress", progress: 65, desc: "3D printing shells, testing actuators, and refining the screen." },
-    { title: "Firmware Development", status: "in-progress", progress: 40, desc: "Writing the animation engine and touch sensor drivers." },
+    { title: "Concept Defined", status: "in-progress", progress: 26, desc: "Initial sketches, emotional goals, and core feature set locked." },
+    { title: "Architecture Designed", status: "upcoming", progress: 0, desc: "System architecture, component selection, and PCB layout." },
+    { title: "Hardware Prototyping", status: "upcoming", progress: 0, desc: "3D printing shells, testing actuators, and refining the screen." },
+    { title: "Firmware Development", status: "upcoming", progress: 0, desc: "Writing the animation engine and touch sensor drivers." },
     { title: "Mechanical Refinement", status: "upcoming", progress: 0, desc: "Optimizing for mass manufacturing and durability." },
     { title: "Testing Phase", status: "upcoming", progress: 0, desc: "Beta units sent to early supporters for real-world feedback." },
     { title: "Manufacturing Preparation", status: "upcoming", progress: 0, desc: "Tooling, supply chain setup, and final quality assurance." }
@@ -45,20 +45,20 @@ export function Progress() {
               </div>
               
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                Optimizing the Animation Engine
+                Concept Architecture Finalization
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mb-8">
-                We're currently fine-tuning the procedural animation system to ensure LUMA's expressions feel fluid and lifelike at a consistent 60fps, even while processing background tasks.
+                We are formalizing LUMA’s product identity, emotional framework, and system architecture to ensure clarity in purpose, functionality, and long-term scalability. This phase establishes the foundation for all hardware, software, and design decisions.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10">
-                  <div className="text-sm text-gray-400 mb-1">Target Framerate</div>
-                  <div className="text-2xl font-mono font-bold text-white">60 FPS</div>
+                  <div className="text-sm text-gray-400 mb-1">Primary Focus</div>
+                  <div className="text-2xl font-mono font-bold text-white">Emotional Architecture & Use Case Definition</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10">
-                  <div className="text-sm text-gray-400 mb-1">Battery Impact</div>
-                  <div className="text-2xl font-mono font-bold text-[#A3D9D3]">-15%</div>
+                  <div className="text-sm text-gray-400 mb-1">Scope Freeze Progress</div>
+                  <div className="text-2xl font-mono font-bold text-[#A3D9D3]">60%</div>
                 </div>
               </div>
             </div>
