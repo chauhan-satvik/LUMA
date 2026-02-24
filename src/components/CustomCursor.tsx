@@ -2,6 +2,10 @@ import { motion, useMotionValue, useSpring, useVelocity, useTransform } from "mo
 import { useEffect } from "react";
 
 export default function CustomCursor() {
+  if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+    return null;
+  }
+  
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
