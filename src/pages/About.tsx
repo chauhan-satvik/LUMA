@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Users, Target, Zap, Rocket } from "lucide-react";
 import satvikImg from "../assets/Satvik.png";
 import heetImg from '../assets/Heet.jpeg'
-// import utsavImg from "../assets/"
+import utsavImg from "../assets/Utsav.jpeg"
 import { image } from "framer-motion/client";
 export function About() {
   return (
@@ -54,7 +54,7 @@ export function About() {
             {[
               { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross-domain integration to ensure seamless hardware–software alignment.", image : satvikImg },
               { name: "Heet Sorathia", role: "Hardware & Mechanical Lead", desc: "Oversees product engineering, 3D design, and structural development, ensuring manufacturability and mechanical precision.", image : heetImg },
-              { name: "Utsav Raj", role: "Experience & Identity Lead", desc: "Directs product identity, user experience, and visual design, shaping LUMA’s emotional presence and interaction model.", image : heetImg }
+              { name: "Utsav Raj", role: "Experience & Identity Lead", desc: "Directs product identity, user experience, and visual design, shaping LUMA’s emotional presence and interaction model.", image : utsavImg }
             ].map((member, i) => (
               <motion.div 
                 key={i}
