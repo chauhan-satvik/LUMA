@@ -13,7 +13,7 @@ export function Navbar() {
     { name: "About Us", path: "/about" },
     { name: "Progress", path: "/progress" },
   ];
-
+const lastUpdated = "24th Feb 2026";
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -52,6 +52,10 @@ export function Navbar() {
               )}
             </Link>
           ))}
+
+          <span className="text-xs text-gray-400 ml-4 border-l pl-4">
+            Last Update : {lastUpdated}
+          </span>
         </nav>
 
         {/* Mobile Toggle */}
