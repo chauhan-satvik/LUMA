@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Progress } from "./pages/Progress";
+import { Features } from "./pages/Features"
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="features" element={<Features />} />
           <Route path="about" element={<About />} />
           <Route path="progress" element={<Progress />} />
         </Route>

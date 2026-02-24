@@ -10,13 +10,14 @@ export function Navbar() {
 
   const links = [
     { name: "Home", path: "/" },
+    { name: "Features", path: "/features" },
     { name: "About Us", path: "/about" },
     { name: "Progress", path: "/progress" },
   ];
-const lastUpdated = "24th Feb 2026";
+  const lastUpdate = "24th Feb 2026"
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="relative max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#A3D9D3] to-blue-200 flex items-center justify-center shadow-sm relative overflow-hidden">
             <motion.div 
@@ -29,6 +30,11 @@ const lastUpdated = "24th Feb 2026";
             LUMA
           </span>
         </Link>
+
+        {/* Always Visible Last Update */}
+        <span className="text-[10px] sm:text-xs text-gray-400 absolute left-1/2 -translate-x-1/2">
+          Last Update : {lastUpdate}
+        </span>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
@@ -53,9 +59,9 @@ const lastUpdated = "24th Feb 2026";
             </Link>
           ))}
 
-          <span className="text-xs text-gray-400 ml-4 border-l pl-4">
-            Last Update : {lastUpdated}
-          </span>
+          {/* <span className="text-xs text-gray-400 ml-4 border-l pl-4">
+            Last Update : {lastUpdate}
+          </span> */}
         </nav>
 
         {/* Mobile Toggle */}
