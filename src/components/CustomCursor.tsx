@@ -15,9 +15,27 @@ export default function CustomCursor() {
     return () => window.removeEventListener("mousemove", move);
   }, [mouseX, mouseY]);
 
+  const isHovering = useMotionValue(0);
+  
+  useEffect(() => {
+    const handleMouseOver = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+
+        if (target.closest("a, button, [data-cursor='hover']")) {
+        isHovering.set(1);
+        } else {
+        isHovering.set(0);
+        }
+    };
+
+    window.addEventListener("mouseover", handleMouseOver);
+    return () => window.removeEventListener("mouseover", handleMouseOver);
+    }, [isHovering]);
+
   // Smooth follow
   const smoothX = useSpring(mouseX, { stiffness: 500, damping: 40 });
   const smoothY = useSpring(mouseY, { stiffness: 500, damping: 40 });
+
 
   // Velocity detection
   const velocityX = useVelocity(mouseX);
@@ -31,6 +49,12 @@ export default function CustomCursor() {
     );
   // Scale based on speed
   const scale = useTransform(speed, [0, 1500], [1, 1.6]);
+  const hoverScale = useTransform(isHovering, [0, 1], [1, 2]);
+
+  const finalScale = useTransform(
+    [scale, hoverScale],
+    ([s, h]: [number, number]) => s * h
+  );
   const stretchX = useTransform(speed, [0, 1500], [1, 1.3]);
   const stretchY = useTransform(speed, [0, 1500], [1, 0.85]);
 
@@ -42,7 +66,7 @@ export default function CustomCursor() {
         y: smoothY,
         translateX: "-50%",
         translateY: "-50%",
-        scale,
+        scale : finalScale,
         scaleX: stretchX,
         scaleY: stretchY
       }}
