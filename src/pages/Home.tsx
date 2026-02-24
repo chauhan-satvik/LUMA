@@ -121,7 +121,7 @@ export function Home() {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
-                to="#features" 
+                to="/features" 
                 className="px-8 py-4 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
               >
                 Explore LUMA <ArrowRight size={18} />
