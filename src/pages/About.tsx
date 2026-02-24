@@ -52,7 +52,7 @@ export function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross-domain integration to ensure seamless hardware–software alignment.", image : satvikImg, instagram : "@heheshashi" },
+              { name: "Satvik Chauhan", role: "Technical Architect & Operations Lead", desc: "Leads system architecture, firmware development, and cross domain integration to ensure seamless hardware–software alignment.", image : satvikImg, instagram : "@heheshashi" },
               { name: "Heet Sorathia", role: "Hardware & Mechanical Lead", desc: "Oversees product engineering, 3D design, and structural development, ensuring manufacturability and mechanical precision.", image : heetImg, instagram : "@heet_so_" },
               { name: "Utsav Raj", role: "Experience & Identity Lead", desc: "Directs product identity, user experience, and visual design, shaping LUMA’s emotional presence and interaction model.", image : utsavImg, instagram : "@activolreta" }
             ].map((member, i) => (
@@ -78,6 +78,7 @@ export function About() {
                 <h3 className="text-xl font-display font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-[#6BB5AC] font-medium text-sm mb-4">{member.role}</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{member.desc}</p>
+
                 <a 
                   href={`https://instagram.com/${member.instagram.replace('@', '')}`} 
                   target="_blank" 
