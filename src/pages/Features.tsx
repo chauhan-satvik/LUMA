@@ -32,8 +32,8 @@ export function Features() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
-  const smoothX = useSpring(mouseX, { stiffness: 1000, damping: 15 });
-  const smoothY = useSpring(mouseY, { stiffness: 1000, damping: 15 });
+  const smoothX = useSpring(mouseX, { stiffness: 800, damping: 20 });
+  const smoothY = useSpring(mouseY, { stiffness: 800, damping: 20 });
 
   const eyeX = useTransform(smoothX, [-1, 1], [-15, 15]);
   const eyeY = useTransform(smoothY, [-1, 1], [-10, 10]);
