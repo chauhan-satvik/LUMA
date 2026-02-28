@@ -6,12 +6,14 @@ import { Progress } from "./pages/Progress";
 import { Features } from "./pages/Features"
 import CustomCursor from "./components/CustomCursor";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   return (
     <BrowserRouter>
       <CustomCursor />
       <ScrollToTop />
+      <Analytics />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
