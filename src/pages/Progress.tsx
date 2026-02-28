@@ -3,7 +3,7 @@ import { CheckCircle2, CircleDashed, Circle, Clock, ArrowRight, Activity } from 
 
 export function Progress() {
   const timeline = [
-    { title: "Concept Defined", status: "in-progress", progress: 26, desc: "Initial sketches, emotional goals, and core feature set locked." },
+    { title: "Concept Defined", status: "in-progress", progress: 47, desc: "Initial sketches, emotional goals, and core feature set locked." },
     { title: "Architecture Designed", status: "upcoming", progress: 0, desc: "System architecture, component selection, and PCB layout." },
     { title: "Hardware Prototyping", status: "upcoming", progress: 0, desc: "3D printing shells, testing actuators, and refining the screen." },
     { title: "Firmware Development", status: "upcoming", progress: 0, desc: "Writing the animation engine and touch sensor drivers." },
@@ -58,7 +58,7 @@ export function Progress() {
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10">
                   <div className="text-sm text-gray-400 mb-1">Scope Freeze Progress</div>
-                  <div className="text-2xl font-mono font-bold text-[#A3D9D3]">60%</div>
+                  <div className="text-2xl font-mono font-bold text-[#A3D9D3]">86%</div>
                 </div>
               </div>
             </div>
